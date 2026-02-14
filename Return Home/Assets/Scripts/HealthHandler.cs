@@ -28,6 +28,7 @@ public class HealthHandler : MonoBehaviour
         if (other.CompareTag("Water"))
         {
             Debug.Log("trigger");
+            this.transform.position = Checkpoint.transform.position;
         }
     }
 
