@@ -3,6 +3,7 @@ using UnityEngine;
 public class HealthHandler : MonoBehaviour
 {
     // FIELDS
+    public GameObject Checkpoint;
     public float iFrameLeniency;
 
     private float iFrames;

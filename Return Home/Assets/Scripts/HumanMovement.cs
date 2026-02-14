@@ -8,19 +8,18 @@ public class HumanMovement : MonoBehaviour
     public float jumpPower;
     public LayerMask groundLayer;
     public float coyoteLeniency;
+    public enum Direction
+    {
+        Left,
+        Right
+    }
+    public Direction facing;
 
     private Rigidbody2D rb;
     private float moveInput;
     private bool jumpInput;
     private RaycastHit2D groundCheck;
     private float coyoteTime;
-    enum Direction
-    {
-        Left,
-        Right
-    }
-    private Direction facing;
-
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
