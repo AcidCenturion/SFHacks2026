@@ -9,19 +9,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void Controls()
-    {
-        controlsPanel.SetActive(true);
-    }
-
     public void ExitGame()
     {
         Debug.Log("Exit Game");
         Application.Quit();
     }
 
-    public void CloseControlsPanel()
-    {
-        controlsPanel.SetActive(false);
-    }
 }
