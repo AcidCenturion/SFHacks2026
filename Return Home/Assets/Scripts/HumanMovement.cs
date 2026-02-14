@@ -23,7 +23,6 @@ public class HumanMovement : MonoBehaviour
     private float coyoteTime;
 
     private CreateObject createObjectScript;
-    public KeyCode createTrashKey = KeyCode.Space;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,9 +39,6 @@ public class HumanMovement : MonoBehaviour
         movement();
 
         jump();
-
-        if (Input.GetKeyDown(createTrashKey))
-            createObjectScript.CreateTrash();
     }
 
 
@@ -135,6 +131,16 @@ Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.red);
     private void OnJump(InputValue input)
     {
         jumpInput = input.isPressed;
-Debug.Log("checked jump: " + jumpInput);
+    }
+
+    /*
+    action is used to place trash
+    */
+    private void OnAction(InputValue input)
+    {
+        if(input.isPressed)
+        {
+            createObjectScript.CreateTrash();
+        }
     }
 }
