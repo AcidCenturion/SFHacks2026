@@ -14,6 +14,7 @@ public class FishMovement : MonoBehaviour
     public Direction facing;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private Vector2 moveInput;
 
 
@@ -22,11 +23,27 @@ public class FishMovement : MonoBehaviour
     {
         this.enabled = false;
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //change direction of the player
+        //+ if right
+        if(moveInput.x > 0)
+        {
+            sr.flipX = true;
+            facing = Direction.Right;
+        }
+        else if(moveInput.x < 0)
+        {
+            sr.flipX = false;
+            facing = Direction.Left;
+        }
+        //else, which is no move input, do nothing to save last direction
+
+        //apply movement
         rb.linearVelocity = moveInput * moveSpd;
     }
 

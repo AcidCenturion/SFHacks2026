@@ -16,6 +16,7 @@ public class HumanMovement : MonoBehaviour
     public Direction facing;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private float moveInput;
     private bool jumpInput;
     private RaycastHit2D groundCheck;
@@ -29,6 +30,7 @@ public class HumanMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         createObjectScript = GetComponent<CreateObject>();
     }
 
@@ -51,10 +53,12 @@ public class HumanMovement : MonoBehaviour
         //+ if right
         if(moveInput > 0)
         {
+            sr.flipX = false;
             facing = Direction.Right;
         }
         else if(moveInput < 0)
         {
+            sr.flipX = true;
             facing = Direction.Left;
         }
         //else, which is no move input, do nothing to save last direction
