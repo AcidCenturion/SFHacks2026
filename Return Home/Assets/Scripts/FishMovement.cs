@@ -9,6 +9,7 @@ public class FishMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,11 +22,8 @@ public class FishMovement : MonoBehaviour
         rb.linearVelocity = moveInput * moveSpd;
     }
 
-    // Called by the Player Input component
-    /*
-    Gets the direction of the input 
-    based on bindings connected to the Move action in the Input System asset
-    */
+
+    // ACTION INPUT SYSTEM FUNCTIONS
     private void OnMove(InputValue input)
     {
         moveInput = input.Get<Vector2>();

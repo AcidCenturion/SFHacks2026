@@ -9,12 +9,17 @@ public class HumanMovement : MonoBehaviour
     public LayerMask groundLayer;
     public float coyoteLeniency;
 
-
     private Rigidbody2D rb;
     private float moveInput;
     private bool jumpInput;
     private RaycastHit2D groundCheck;
     private float coyoteTime;
+    enum Direction
+    {
+        Left,
+        Right
+    }
+    private Direction facing;
 
 
 
@@ -36,6 +41,19 @@ public class HumanMovement : MonoBehaviour
     // FUNCTIONS
     private void movement()
     {
+        //change direction of the player
+        //+ if right
+        if(moveInput > 0)
+        {
+            facing = Direction.Right;
+        }
+        else if(moveInput < 0)
+        {
+            facing = Direction.Left;
+        }
+        //else, which is no move input, do nothing to save last direction
+
+        //apply movement
         rb.linearVelocityX = moveInput * moveSpd;
     }
 
