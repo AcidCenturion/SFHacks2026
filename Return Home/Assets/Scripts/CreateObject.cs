@@ -3,7 +3,7 @@ using UnityEngine;
 public class CreateObject : MonoBehaviour
 {
     public GameObject[] TrashPrefabs;
-    public GameObject player;
+    //public GameObject player;
     
     // Object Creation Variables
     public float ySpawnPosition = 0.5f;
@@ -18,16 +18,16 @@ public class CreateObject : MonoBehaviour
         if (isCreating) return; // Prevent multiple spawns at the same time
 
         int randomIndex = Random.Range(0, TrashPrefabs.Length);
-        bool spawnOnLeft = player.GetComponent<HumanMovement>().facing == HumanMovement.Direction.Left;
+        bool spawnOnLeft = this.GetComponent<HumanMovement>().facing == HumanMovement.Direction.Left;
 
         Vector3 spawnPosition;
         if (spawnOnLeft)
         {
-            spawnPosition = new Vector3(player.transform.position.x - xSpawnRange, ySpawnPosition, 0);
+            spawnPosition = new Vector3(this.transform.position.x - xSpawnRange, ySpawnPosition, 0);
         }
         else
         {
-            spawnPosition = new Vector3(player.transform.position.x + xSpawnRange, ySpawnPosition, 0);
+            spawnPosition = new Vector3(this.transform.position.x + xSpawnRange, ySpawnPosition, 0);
         } 
 
         Instantiate(TrashPrefabs[randomIndex], spawnPosition, Quaternion.identity);
