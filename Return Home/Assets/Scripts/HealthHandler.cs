@@ -6,6 +6,8 @@ public class HealthHandler : MonoBehaviour
 
     public GameObject checkpoint;
     public GameObject switchTarget; //should always be the fish
+    public GameObject oldCamera;
+    public GameObject newCamera;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,10 +37,15 @@ public class HealthHandler : MonoBehaviour
         //Switch to fish controls when reaching finish line
         if (this.CompareTag("Human") && other.CompareTag("Home"))
         {
+            //disable the human movement and enable the fish movement
             switchTarget.GetComponent<FishMovement>().enabled = true;
             GetComponent<HumanMovement>().enabled = false;
             GetComponent<Rigidbody2D>().linearVelocityX = 0;
             GetComponent<Rigidbody2D>().linearVelocityY = 0;
+
+            //change cameras
+            oldCamera.SetActive(false);
+            newCamera.SetActive(true);
         }
     }
 }

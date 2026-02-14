@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1257564332910428219}
   - component: {fileID: 1763335447141829756}
   - component: {fileID: 3306230634220837025}
-  - component: {fileID: 9195063467971056546}
   - component: {fileID: 7994455436752855817}
+  - component: {fileID: 8733904707527096971}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 7.13, y: 1.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -8562178703673267954, guid: a9e827fe8869a004cb6b660391342882, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -159,12 +159,34 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &9195063467971056546
-PolygonCollider2D:
+--- !u!95 &7994455436752855817
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780000148276736500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed587bd2504386344b73e822d85b955f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &8733904707527096971
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -207,31 +229,5 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
---- !u!95 &7994455436752855817
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7780000148276736500}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed587bd2504386344b73e822d85b955f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Size: {x: 2.92, y: 2.0300002}
+  m_EdgeRadius: 0
