@@ -25,7 +25,7 @@ public class HealthHandler : MonoBehaviour
     // FUNCTIONS
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Water"))
+        if (this.CompareTag("Human") && other.CompareTag("Water"))
         {
             Debug.Log("trigger");
             this.transform.position = Checkpoint.transform.position;
