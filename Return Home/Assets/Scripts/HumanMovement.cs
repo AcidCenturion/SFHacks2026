@@ -7,6 +7,7 @@ public class HumanMovement : MonoBehaviour
     public float moveSpd;
     public float jumpPower;
     public LayerMask groundLayer;
+    public float groundCheckDistance;
     public float coyoteLeniency;
     public enum Direction
     {
@@ -65,7 +66,7 @@ public class HumanMovement : MonoBehaviour
 
     private void jump()
     {
-Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.red);
+Debug.DrawRay(transform.position, Vector2.down * groundCheckDistance, Color.red);
 
         // coyote time
         //timer reset
@@ -107,7 +108,7 @@ Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.red);
     */
     private bool isGrounded()
     {
-        groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, groundLayer);
+        groundCheck = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
         return groundCheck;
     }
 

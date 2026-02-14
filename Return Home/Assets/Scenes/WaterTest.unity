@@ -745,8 +745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8ae69d47724044aa4af6dc8e148a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Checkpoint: {fileID: 1111727838}
-  iFrameLeniency: 0
+  checkpoint: {fileID: 1111727838}
+  switchTarget: {fileID: 0}
 --- !u!1001 &7272044730542270041
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -33,12 +33,12 @@ public class FishMovement : MonoBehaviour
         //+ if right
         if(moveInput.x > 0)
         {
-            sr.flipX = true;
+            sr.flipX = false; //sprite facing right, default is flipped already
             facing = Direction.Right;
         }
         else if(moveInput.x < 0)
         {
-            sr.flipX = false;
+            sr.flipX = true;
             facing = Direction.Left;
         }
         //else, which is no move input, do nothing to save last direction
