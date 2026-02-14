@@ -17,6 +17,7 @@ public class EnemyFish : MonoBehaviour
     public float pollutedChaseSpeed = 3f;
     public float chaseDistance = 5f;
     public float returnSpeed = 1f;
+    private bool isFacingLeft = true;
     private Vector3 initialPosition;
 
     public GameObject player;
@@ -38,6 +39,15 @@ public class EnemyFish : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(initialPosition, player.transform.position);
         Debug.Log($"Distance to player: {distanceToPlayer}");
+
+        if (player.transform.position.x > transform.position.x && isFacingLeft)
+        {
+            Flip();
+        }
+        else if (player.transform.position.x < transform.position.x && !isFacingLeft)
+        {
+            Flip();
+        }
 
         if (distanceToPlayer <= chaseDistance)
         {
@@ -85,6 +95,14 @@ public class EnemyFish : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
         }
+    }
+
+    void Flip()
+    {
+        isFacingLeft = !isFacingLeft;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
 
