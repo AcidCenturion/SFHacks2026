@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 729159756590398138}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   coyoteLeniency: 0.25
+  facing: 0
 --- !u!114 &5280411849584118183
 MonoBehaviour:
   m_ObjectHideFlags: 0

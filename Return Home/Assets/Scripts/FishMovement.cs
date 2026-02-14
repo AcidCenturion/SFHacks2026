@@ -4,7 +4,14 @@ using UnityEngine.InputSystem;
 public class FishMovement : MonoBehaviour
 {
     // FIELDS
+
     public float moveSpd;
+    public enum Direction
+    {
+        Left,
+        Right
+    }
+    public Direction facing;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -13,6 +20,7 @@ public class FishMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        this.enabled = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -24,6 +32,7 @@ public class FishMovement : MonoBehaviour
 
 
     // ACTION INPUT SYSTEM FUNCTIONS
+
     private void OnMove(InputValue input)
     {
         moveInput = input.Get<Vector2>();

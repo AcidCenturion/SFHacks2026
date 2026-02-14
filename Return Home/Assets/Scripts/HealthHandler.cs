@@ -3,10 +3,9 @@ using UnityEngine;
 public class HealthHandler : MonoBehaviour
 {
     // FIELDS
-    public GameObject Checkpoint;
-    public float iFrameLeniency;
 
-    private float iFrames;
+    public GameObject checkpoint;
+    public GameObject switchTarget; //should always be the fish
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,13 +22,23 @@ public class HealthHandler : MonoBehaviour
 
 
     // FUNCTIONS
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        //Respawn function for the Human
+        //select an object in inspector as respawn location
         if (this.CompareTag("Human") && other.CompareTag("Water"))
         {
-            Debug.Log("trigger");
-            this.transform.position = Checkpoint.transform.position;
+            this.transform.position = checkpoint.transform.position;
+        }
+
+        //Switch to fish controls when reaching finish line
+        if (this.CompareTag("Human") && other.CompareTag("Home"))
+        {
+            switchTarget.GetComponent<FishMovement>().enabled = true;
+            GetComponent<HumanMovement>().enabled = false;
+            GetComponent<Rigidbody2D>().linearVelocityX = 0;
+            GetComponent<Rigidbody2D>().linearVelocityY = 0;
         }
     }
-
 }

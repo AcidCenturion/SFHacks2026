@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Undefined
   - Piranha
+  - Water
+  - Human
+  - Home
   layers:
   - Default
   - TransparentFX
