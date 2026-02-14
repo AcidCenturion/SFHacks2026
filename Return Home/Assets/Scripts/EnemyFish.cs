@@ -1,6 +1,7 @@
 using System.Diagnostics.Tracing;
 using UnityEngine;
 
+
 public class EnemyFish : MonoBehaviour
 {
     public enum PollutionLevel

@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5280411849584118183}
   - component: {fileID: 2830219049566892235}
   - component: {fileID: 729159756590398138}
+  - component: {fileID: 254607039755148432}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Human
   m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +111,7 @@ MonoBehaviour:
     m_Bits: 8
   coyoteLeniency: 0.25
   facing: 0
+  createTrashKey: 32
 --- !u!114 &5280411849584118183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +206,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &254607039755148432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926768038254578921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2a2bf3cbe2cc94bb222c413a8c59e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrashPrefabs: []
+  player: {fileID: 0}
+  ySpawnPosition: 0.5
+  xSpawnRange: 2

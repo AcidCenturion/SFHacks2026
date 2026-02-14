@@ -21,11 +21,15 @@ public class HumanMovement : MonoBehaviour
     private RaycastHit2D groundCheck;
     private float coyoteTime;
 
+    private CreateObject createObjectScript;
+    public KeyCode createTrashKey = KeyCode.Space;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        createObjectScript = GetComponent<CreateObject>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,9 @@ public class HumanMovement : MonoBehaviour
         movement();
 
         jump();
+
+        if (Input.GetKeyDown(createTrashKey))
+            createObjectScript.CreateTrash();
     }
 
 
