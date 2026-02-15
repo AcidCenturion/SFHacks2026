@@ -7,6 +7,7 @@ public class TrashManager : MonoBehaviour
     private List<GameObject> trashList = new List<GameObject>();
     public GameObject[] enemyFishes;
     public GameObject[] underwaterImages;
+    private int totalTrashCreated = 0;
 
     public int trashLowMaxThreshold = 8;
     public int trashMedMaxThreshold = 15;
@@ -20,6 +21,7 @@ public class TrashManager : MonoBehaviour
         if (trash == null) return;
 
         trashList.Add(trash);
+        totalTrashCreated += 1;
     }
 
     public void DestroyTrash(GameObject trash)
@@ -54,16 +56,15 @@ public class TrashManager : MonoBehaviour
 
     public void UpdateLevelByTrashAmount()
     {
-        int trashAmount = TrashListSize();
 
         //update ocean background color too
 
-        if (trashAmount < trashLowMaxThreshold)
+        if (totalTrashCreated < trashLowMaxThreshold)
         {
             // set to low difficulty; friendly fish
             UpdateEnemyFishDifficulty(EnemyFish.PollutionLevel.Low);
 
-        } else if (trashAmount < trashMedMaxThreshold)
+        } else if (totalTrashCreated < trashMedMaxThreshold)
         {
             // set to medium difficulty
             UpdateEnemyFishDifficulty(EnemyFish.PollutionLevel.Medium);
