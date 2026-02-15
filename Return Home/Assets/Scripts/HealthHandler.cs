@@ -39,6 +39,19 @@ public class HealthHandler : MonoBehaviour
             this.transform.position = checkpoint.transform.position;
         }
 
+        if (this.CompareTag("Fish") && other.CompareTag("Enemy"))
+        {
+            if(hp <= 1) //hit on last life
+            {
+                this.transform.position = checkpoint.transform.position;
+                hp = maxHP;
+            }
+            else //hit but not on last life
+            {
+                hp--;
+            }
+        }
+
         //Switch to fish controls when reaching finish line
         if (this.CompareTag("Human") && other.CompareTag("Home"))
         {

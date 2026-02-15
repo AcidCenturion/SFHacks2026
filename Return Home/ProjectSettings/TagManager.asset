@@ -10,6 +10,8 @@ TagManager:
   - Human
   - Home
   - Trash
+  - Enemy
+  - Fish
   layers:
   - Default
   - TransparentFX
