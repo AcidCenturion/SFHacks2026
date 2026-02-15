@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthHandler : MonoBehaviour
 {
@@ -13,18 +14,31 @@ public class HealthHandler : MonoBehaviour
     public GameObject trashManager;
 
     private int hp;
+    public Sprite scale;
+    public Image[] healthDisplay;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hp = maxHP;
+        
+        GameObject human = GameObject.FindGameObjectWithTag("Human");
+        if (human.GetComponent<HumanMovement>().enabled)
+        {
+            HideHealth(hp);
+        }
+        else
+        {
+            DisplayHealth(hp);
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -41,7 +55,7 @@ public class HealthHandler : MonoBehaviour
 
         if (this.CompareTag("Fish") && other.CompareTag("Enemy"))
         {
-            if(hp <= 1) //hit on last life
+            if (hp <= 1) //hit on last life
             {
                 this.transform.position = checkpoint.transform.position;
                 hp = maxHP;
@@ -50,6 +64,8 @@ public class HealthHandler : MonoBehaviour
             {
                 hp--;
             }
+
+            DisplayHealth(hp);
         }
 
         //Switch to fish controls when reaching finish line
@@ -72,13 +88,16 @@ public class HealthHandler : MonoBehaviour
             {
                 trashManager.GetComponent<TrashManager>().UpdateLevelByTrashAmount();
             }
+
+            HealthHandler fishHealth = switchTarget.GetComponent<HealthHandler>();
+            fishHealth.DisplayHealth(fishHealth.maxHP);
         }
     }
 
     void OnParticleCollision(GameObject other)
     {
         //Debug.Log("Trigger");
-        if(hp <= 1) //hit on last life
+        if (hp <= 1) //hit on last life
         {
             this.transform.position = checkpoint.transform.position;
             hp = maxHP;
@@ -87,5 +106,34 @@ public class HealthHandler : MonoBehaviour
         {
             hp--;
         }
+
+        DisplayHealth(hp);
     }
+
+    public void DisplayHealth(int currHealth)
+    {
+    
+        for (int i = 0; i < healthDisplay.Length; i++)
+        {
+            if (i < currHealth)
+            {
+                healthDisplay[i].enabled = true; // Display scale
+            }
+            else
+            {
+                healthDisplay[i].enabled = false; // Hides scale
+            }
+        }
+
+    }
+
+    public void HideHealth(int currHealth)
+    {
+        for (int i = 0; i < healthDisplay.Length; i++)
+        {
+            healthDisplay[i].enabled = false;
+        }
+    }
+    
+    
 }
