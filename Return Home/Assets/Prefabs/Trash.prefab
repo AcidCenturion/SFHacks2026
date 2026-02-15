@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf4eaba0341fba4995e6625c2d70802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debrisParticles: {fileID: 3722718667024727362, guid: 6adb86edcbcac2d4b81ccb712e5d5e6e, type: 3}
-  debrisSpawnHeight: 3
+  debrisParticles: {fileID: 8985396452761985232, guid: 67f526b71b9678a48878204fbcc79880, type: 3}
+  debrisSpawnHeight: -2.5
 --- !u!61 &7041760611615016034
 BoxCollider2D:
   m_ObjectHideFlags: 0

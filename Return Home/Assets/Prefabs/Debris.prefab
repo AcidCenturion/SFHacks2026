@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8985380050462964906}
   - component: {fileID: 4176134595857885411}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
