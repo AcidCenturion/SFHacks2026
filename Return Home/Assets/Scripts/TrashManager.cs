@@ -7,7 +7,7 @@ public class TrashManager : MonoBehaviour
     private List<GameObject> trashList = new List<GameObject>();
     public GameObject[] enemyFishes;
     public GameObject[] underwaterImages;
-    private int totalTrashCreated = 0;
+    public int totalTrashCreated = 0;
 
     public int trashLowMaxThreshold = 8;
     public int trashMedMaxThreshold = 15;
