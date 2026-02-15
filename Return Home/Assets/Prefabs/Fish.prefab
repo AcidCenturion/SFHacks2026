@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 45370720483994463}
   - component: {fileID: 1257564332910428219}
   - component: {fileID: 1763335447141829756}
+  - component: {fileID: 2026884678071861075}
   - component: {fileID: 3306230634220837025}
   - component: {fileID: 7994455436752855817}
   - component: {fileID: 8733904707527096971}
@@ -136,6 +137,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpd: 5
   facing: 0
+--- !u!114 &2026884678071861075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780000148276736500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8ae69d47724044aa4af6dc8e148a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: {fileID: 0}
+  switchTarget: {fileID: 0}
+  maxHP: 3
+  oldCamera: {fileID: 0}
+  newCamera: {fileID: 0}
+  Kraken: {fileID: 0}
+  trashManager: {fileID: 0}
+  scale: {fileID: 0}
+  healthDisplay: []
 --- !u!50 &3306230634220837025
 Rigidbody2D:
   serializedVersion: 5
