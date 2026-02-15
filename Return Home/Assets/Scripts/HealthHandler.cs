@@ -6,14 +6,17 @@ public class HealthHandler : MonoBehaviour
 
     public GameObject checkpoint;
     public GameObject switchTarget; //should always be the fish
+    public int maxHP;
     public GameObject oldCamera;
     public GameObject newCamera;
+
+    private int hp;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        hp = maxHP;
     }
 
     // Update is called once per frame
@@ -46,6 +49,20 @@ public class HealthHandler : MonoBehaviour
             //change cameras
             oldCamera.SetActive(false);
             newCamera.SetActive(true);
+        }
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        //Debug.Log("Trigger");
+        if(hp <= 1) //hit on last life
+        {
+            this.transform.position = checkpoint.transform.position;
+            hp = maxHP;
+        }
+        else //hit but not on last life
+        {
+            hp--;
         }
     }
 }

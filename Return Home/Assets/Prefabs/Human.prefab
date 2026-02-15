@@ -183,9 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2a2bf3cbe2cc94bb222c413a8c59e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrashPrefabs: []
+  TrashPrefabs:
+  - {fileID: 1082821545737705601, guid: de5307257c434094e8dfc8782ba983c5, type: 3}
   ySpawnPosition: 0.5
-  xSpawnRange: 2
+  xSpawnRange: 4
 --- !u!114 &2823700703132348374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,8 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8ae69d47724044aa4af6dc8e148a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 0}
+  checkpoint: {fileID: 3722718667024727362, guid: 6adb86edcbcac2d4b81ccb712e5d5e6e, type: 3}
   switchTarget: {fileID: 0}
+  oldCamera: {fileID: 0}
+  newCamera: {fileID: 0}
 --- !u!61 &6004845088747023475
 BoxCollider2D:
   m_ObjectHideFlags: 0
