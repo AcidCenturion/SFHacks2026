@@ -12,7 +12,8 @@ public class WaterDebris : MonoBehaviour
     void Start()
     {
         Vector2 spawnLoc = new Vector2(this.transform.position.x, debrisSpawnHeight);
-        Instantiate(debrisParticles, spawnLoc, Quaternion.identity);
+        Quaternion rotation = Quaternion.Euler(new Vector2(-270, 0));
+        Instantiate(debrisParticles, spawnLoc, rotation);
     }
 
     // Update is called once per frame

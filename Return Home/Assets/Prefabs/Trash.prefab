@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2010031254237293879}
   - component: {fileID: 622273112543138396}
+  - component: {fileID: 5975606571171700485}
   - component: {fileID: 7041760611615016034}
   - component: {fileID: 3929999139347834394}
   - component: {fileID: 7518421466411857769}
@@ -90,6 +91,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5975606571171700485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082821545737705601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf4eaba0341fba4995e6625c2d70802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debrisParticles: {fileID: 3722718667024727362, guid: 6adb86edcbcac2d4b81ccb712e5d5e6e, type: 3}
+  debrisSpawnHeight: 3
 --- !u!61 &7041760611615016034
 BoxCollider2D:
   m_ObjectHideFlags: 0
