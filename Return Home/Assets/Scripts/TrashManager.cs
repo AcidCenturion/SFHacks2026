@@ -5,19 +5,15 @@ public class TrashManager : MonoBehaviour
 {
 
     private List<GameObject> trashList = new List<GameObject>();
+    public GameObject[] enemyFishes;
+    public GameObject[] underwaterImages;
 
+    public int trashLowMaxThreshold = 8;
+    public int trashMedMaxThreshold = 15;
+    public Color lowColor;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Color medColor;
+    public Color highColor;
 
     public void AddTrash(GameObject trash)
     {
@@ -54,5 +50,52 @@ public class TrashManager : MonoBehaviour
     public int TrashListSize()
     {
         return trashList.Count;
+    }
+
+    public void UpdateLevelByTrashAmount()
+    {
+        int trashAmount = TrashListSize();
+
+        //update ocean background color too
+
+        if (trashAmount < trashLowMaxThreshold)
+        {
+            // set to low difficulty; friendly fish
+            UpdateEnemyFishDifficulty(EnemyFish.PollutionLevel.Low);
+
+        } else if (trashAmount < trashMedMaxThreshold)
+        {
+            // set to medium difficulty
+            UpdateEnemyFishDifficulty(EnemyFish.PollutionLevel.Medium);
+        } else
+        {
+            // set to hard difficulty
+            UpdateEnemyFishDifficulty(EnemyFish.PollutionLevel.High);
+        }
+    }
+
+    private void UpdateEnemyFishDifficulty(EnemyFish.PollutionLevel difficulty)
+    {
+        for (int i = 0; i < enemyFishes.Length; i++)
+        {
+            if (!enemyFishes[i].GetComponent<EnemyFish>().setPollutionLevel(difficulty))
+                Debug.Log("Failed to update fish " + i);
+        }
+    }
+
+    private void UpdateUnderwaterImage(EnemyFish.PollutionLevel difficulty, GameObject imageObject)
+    {
+        SpriteRenderer sr = imageObject.GetComponent<SpriteRenderer>();
+        switch (difficulty)
+        {
+            case EnemyFish.PollutionLevel.Low:
+                break;
+            case EnemyFish.PollutionLevel.Medium:
+                break;
+            case EnemyFish.PollutionLevel.High:
+                break;
+
+        }
+        
     }
 }

@@ -9,6 +9,8 @@ public class HealthHandler : MonoBehaviour
     public int maxHP;
     public GameObject oldCamera;
     public GameObject newCamera;
+    public GameObject Kraken;
+    public GameObject trashManager;
 
     private int hp;
 
@@ -49,6 +51,14 @@ public class HealthHandler : MonoBehaviour
             //change cameras
             oldCamera.SetActive(false);
             newCamera.SetActive(true);
+
+            // Disable kraken
+            if (Kraken != null) Kraken.SetActive(false);
+
+            if (trashManager != null)
+            {
+                trashManager.GetComponent<TrashManager>().UpdateLevelByTrashAmount();
+            }
         }
     }
 
