@@ -51,5 +51,12 @@ public class Piranha : MonoBehaviour
     }
 
 
-    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Trash"))
+        {
+            reachedTop = true;
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
 }
