@@ -7,7 +7,7 @@ public class FishMovement : MonoBehaviour
     // FIELDS
 
     public float moveSpd;
-    public float boost;
+    //public float boost;
     public enum Direction
     {
         Left,
@@ -50,6 +50,7 @@ public class FishMovement : MonoBehaviour
     }
 
 
+    /*
     // currents force the fish in the direction of the current, so add a force in the direction of the current
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -59,6 +60,7 @@ public class FishMovement : MonoBehaviour
             rb.AddForce(Vector2.left * boost);
         }
     }
+    */
 
 
     // ACTION INPUT SYSTEM FUNCTIONS
