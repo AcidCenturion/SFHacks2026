@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class HumanMovement : MonoBehaviour
 {
@@ -142,6 +143,17 @@ Debug.DrawRay(transform.position, Vector2.down * groundCheckDistance, Color.red)
         if(input.isPressed)
         {
             createObjectScript.CreateTrash();
+        }
+    }
+
+    /*
+    reset the scene in case stuck
+    */
+    private void OnReset(InputValue input)
+    {
+        if(input.isPressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

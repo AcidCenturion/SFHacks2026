@@ -12,6 +12,7 @@ TagManager:
   - Trash
   - Enemy
   - Fish
+  - Current
   layers:
   - Default
   - TransparentFX

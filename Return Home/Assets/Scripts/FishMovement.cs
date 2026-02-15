@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class FishMovement : MonoBehaviour
 {
     // FIELDS
 
     public float moveSpd;
+    public float boost;
     public enum Direction
     {
         Left,
@@ -48,10 +50,32 @@ public class FishMovement : MonoBehaviour
     }
 
 
+    // currents force the fish in the direction of the current, so add a force in the direction of the current
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.CompareTag("Current"))
+        {
+            //for now only one direction
+            rb.AddForce(Vector2.left * boost);
+        }
+    }
+
+
     // ACTION INPUT SYSTEM FUNCTIONS
 
     private void OnMove(InputValue input)
     {
         moveInput = input.Get<Vector2>();
+    }
+
+    /*
+    reset the scene in case stuck
+    */
+    private void OnReset(InputValue input)
+    {
+        if(input.isPressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
