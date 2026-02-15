@@ -3,6 +3,7 @@ using UnityEngine;
 public class CreateObject : MonoBehaviour
 {
     public GameObject[] TrashPrefabs;
+    public GameObject trashManager;
     //public GameObject player;
     
     // Object Creation Variables
@@ -30,7 +31,8 @@ public class CreateObject : MonoBehaviour
             spawnPosition = new Vector3(this.transform.position.x + xSpawnRange, ySpawnPosition, 0);
         } 
 
-        Instantiate(TrashPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+        GameObject newTrash = Instantiate(TrashPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+        trashManager.GetComponent<TrashManager>().AddTrash(newTrash);
 
         isCreating = false;
     }
