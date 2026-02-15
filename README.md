@@ -5,7 +5,8 @@ Developed in Unity 6000.0.60f1
 You can play the game in the browser at the link below:
 https://acidcenturion.itch.io/return-home
 
-CREDITS
-Emerson Berido
-Kelsey Codilla
-Michael Leong
+
+CREDITS:
+Emerson Berido, 
+Kelsey Codilla, 
+Michael Leong, 
