@@ -34,7 +34,7 @@ public class HealthHandler : MonoBehaviour
     {
         //Respawn function for the Human
         //select an object in inspector as respawn location
-        if (this.CompareTag("Human") && other.CompareTag("Water"))
+        if (this.CompareTag("Human") && (other.CompareTag("Water") || other.CompareTag("Piranha")))
         {
             this.transform.position = checkpoint.transform.position;
         }
